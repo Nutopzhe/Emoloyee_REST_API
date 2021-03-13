@@ -21,7 +21,7 @@ public class Config {
     public BasicDataSource dataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        basicDataSource.setUrl("jdbc:mysql://localhost:3306/my_db?useUnicode=true&amp;serverTimezone=UTC&amp;useSSL=false");
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/my_db?useSSL=false");
         basicDataSource.setUsername("bestuser");
         basicDataSource.setPassword("bestuser");
         return basicDataSource;
