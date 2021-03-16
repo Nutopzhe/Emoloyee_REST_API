@@ -35,4 +35,20 @@ public class Controller {
         employeeService.saveEmployee(emp);
         return emp;
     }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee emp) {
+        employeeService.saveEmployee(emp);
+        return emp;
+    }
+
+    @DeleteMapping("/employees/{id}")
+    public String deleteEmployee(@PathVariable int id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        if (employee == null) {
+            throw new NoSuchEmployeeException("There is no employee with ID = " + id + " in database");
+        }
+        employeeService.deleteEmployee(id);
+        return "Employee with ID = " + id + " was deleted.";
+    }
 }
